@@ -1,4 +1,5 @@
 import logging
+
 from easyaudit.models import RequestEvent, CRUDEvent, LoginEvent
 
 logger = logging.getLogger(__name__)

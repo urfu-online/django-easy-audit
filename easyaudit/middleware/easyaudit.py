@@ -1,9 +1,9 @@
-
 # makes easy-audit thread-safe
 try:
     from threading import local
 except ImportError:
     from django.utils._threading_local import local
+
 
 class MockRequest(object):
     def __init__(self, *args, **kwargs):
@@ -41,8 +41,8 @@ def clear_request():
 
 
 class EasyAuditMiddleware:
-
     """Makes request available to this app signals."""
+
     def __init__(self, get_response=None):
         self.get_response = get_response
 
