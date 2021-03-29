@@ -52,7 +52,7 @@ def request_started_handler(sender, **kwargs):
         cookie_string = headers.get(b'cookie')
         if isinstance(cookie_string, bytes):
             cookie_string = cookie_string.decode("utf-8")
-        server = scope.get('server')
+        server = scope.get('server', ('localhost', '80'))
         remote_ip = '{s_ip}:{s_port}'.format(s_ip=server[0], s_port=server[1])
         query_string = scope.get("query_string")
 
